@@ -1,0 +1,39 @@
+<ion-header class="ww-toolbar">
+  <ion-toolbar color="dark">
+       <ion-title slot="start">
+        <ion-img src="../assets/logo.png" class="logo"></ion-img>
+        Phoenix Application
+      </ion-title>
+      <ion-title slot='end' class="f14">
+        <span class="curspan">Current location</span>
+        Chennai 
+        <ion-icon name="chevron-down-outline" ></ion-icon>`
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-tabs class="ds-top" [ngClass]=" platform.is('desktop') ? 'ds-top' : ''">
+ 
+    <ion-tab-bar  slot="top" >
+      <ion-tab-button tab="tab1" layout="icon-start" [routerLink]="['/tabs/tab1']">
+        <ion-icon name="leaf-outline" ></ion-icon>
+        <ion-label class="font-b">
+          Vegetables
+        </ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab2" layout="icon-start"  [routerLink]="['/tabs/tab2']"> 
+        <ion-icon name="basket-outline"></ion-icon>
+        <ion-label class="font-b">Fruits</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab3" layout="icon-start" [routerLink]="['/tabs/tab3']">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label class="font-b">Grocery</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tab4" layout="icon-start" [routerLink]="['/tabs/tab4']">
+        <ion-icon name="medkit-outline"></ion-icon>
+        <ion-label class="font-b">Medicines</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+   
+</ion-tabs>

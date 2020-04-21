@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true"  class="bg">
+<app-explore-container name="Tab 4 page" (notify)="onNotify($event)" ></app-explore-container>
+  <ion-card *ngIf="!noDatafound">
+     <ion-item *ngFor="let list of lists" routerLink (click)="navigate(list)" >
+      <ion-thumbnail slot="end">
+        <img [src]="list.img">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{list.storeName}}</h3>
+        <p> <ion-icon name="location-outline"></ion-icon> {{list.address}}</p>
+        <p>  <ion-icon name="call-outline" slot="end"></ion-icon> {{list.mobileNumber}}</p> 
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+
+    </ion-item>
+  </ion-card>
+  <h5 class="ion-padding" *ngIf="noDatafound">No Record Found</h5>
+
+</ion-content>

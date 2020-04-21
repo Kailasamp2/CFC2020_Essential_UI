@@ -1,0 +1,52 @@
+<ion-content [fullscreen]="true">
+    <ion-card>
+	<ion-button id="changeText" onClick="toggleText()" style="float: right;">
+        Checkout & Cash on Delivery  <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        <ion-title >
+          <ion-icon name="cart-outline" ></ion-icon> 
+          <ion-badge color="danger">{{count}}</ion-badge>
+        </ion-title>
+      </ion-button>
+      <img style="height: 175px;" src="https://www.bigbasket.com/media/uploads/banner_images/2004225_essentials_400_27thMar.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>{{storeAddress}}</ion-card-subtitle>
+        <ion-card-title>{{storeName}}</ion-card-title>
+      </ion-card-header>      
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Items</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item  *ngFor="let list of lists">
+          <ion-avatar slot="start">
+            <img src="https://www.bigbasket.com/media/customPage/355c27b8-a44f-4900-a390-8e82c69b8021/6f7d5511-eb2f-4631-a10f-be4e15d82910/dddde6ba-4399-4675-96c7-c5d210e5128e/T1_All_Fresh-Fruits_DT_1_480x360_25thMar.jpg">
+          </ion-avatar>
+          <ion-label>
+            <h3>{{list.itemName}}</h3>
+            <p> <b>Price: {{list.itemPrice}}</b></p>
+            <p>Quantity: {{list.itemQuantity}} </p>
+          </ion-label>
+          <div>
+          <ion-icon name="remove-circle-outline" (click)="removeocart(list)" slot="end" style="    font-size: 26px; color: grey; top: 7px; position: relative;"></ion-icon>
+            1
+          <ion-icon name="add-circle-outline" (click)="addtocart(list)" slot="end" style="    font-size: 26px; color: grey; top: 7px; position: relative;"></ion-icon>
+          </div>    
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer style="bottom: 56px;" color="success">
+  <ion-toolbar color="success">
+    <ion-title style="margin-top: -9px;">
+      <ion-icon name="cart-outline" style="font-size: 30px;"></ion-icon> 
+      <ion-badge color="danger" style="    top: -11px; position: relative;">{{count}}</ion-badge>
+     |   Checkout & Cash on Delivery
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="changeText" onClick="toggleText()">
+        <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
