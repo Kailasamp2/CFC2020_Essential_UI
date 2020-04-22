@@ -12,8 +12,11 @@ export class ApiService {
   // API path
 
   //get_lists = '../assets/data/get_lists.json';
-  get_lists = 'http://localhost:9005/storeCon/displayStores';
-  get_item_lists = 'http://localhost:9005/storeCon/displayItems';
+  //get_lists = 'http://localhost:9005/storeCon/displayStores';
+  //get_item_lists = 'http://localhost:9005/storeCon/displayItems';
+  
+  get_lists = 'https://cfc2020essentialsbe.eu-gb.cf.appdomain.cloud/storeCon/displayStores';
+  get_item_lists = 'https://cfc2020essentialsbe.eu-gb.cf.appdomain.cloud/storeCon/displayItems';
  
   constructor(private http: HttpClient) { }
  
